@@ -96,6 +96,7 @@ export default {
   margin-right: 40px;
   position: absolute;
   top: 18px;
+  z-index: 5;
 }
 
 .nav-link{
