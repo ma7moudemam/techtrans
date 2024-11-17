@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import ProductsSection from "@/components/productsSection.vue";
-import LandingSection from "../components/landing.vue";
-import MailNews from "../components/mailNews.vue";
+import ProductsSection from "@/components/static/productsSection.vue";
+import LandingSection from "@/components/static/landing.vue";
+import MailNews from "@/components/shared/mailNews.vue";
 
 export default {
   name: "HomePage",

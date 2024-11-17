@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import ProductCard from "./product-card.vue";
+import ProductCard from "@/components/shared/product-card.vue";
 
 export default {
   name: "ProductsSection",

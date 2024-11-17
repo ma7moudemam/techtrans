@@ -3,7 +3,7 @@
     <div class="container">
       <div class="d-flex align-items-center gap-75">
         <a class="navbar-brand" href="#"
-          ><img src="../assets/images/main/logo.svg" alt=""
+          ><img src="@/assets/images/main/logo.svg" alt=""
         /></a>
         <ul
           class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll d-none d-lg-flex"

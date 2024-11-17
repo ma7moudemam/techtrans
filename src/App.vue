@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import Navbar from './components/navbar.vue';
-import HomePage from './views/Home.vue'
+import Navbar from './components/shared/navbar.vue';
+import HomePage from './views/static/Home.vue'
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"

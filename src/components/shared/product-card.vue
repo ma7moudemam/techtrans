@@ -3,7 +3,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center gap-20">
         <div>
-          <img src="../assets/images/products/maksab.svg" alt="" />
+          <img src="@/assets/images/products/maksab.svg" alt="" />
         </div>
         <div class="fs-18 f-w-bold text-black">مكسب</div>
       </div>
