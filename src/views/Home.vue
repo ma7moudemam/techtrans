@@ -1,14 +1,15 @@
 <template>
-    <div class="homepage">
-        <LandingSection ></LandingSection>
-        <ProductsSection></ProductsSection>
-    </div>
+  <div class="homepage">
+    <LandingSection></LandingSection>
+    <ProductsSection></ProductsSection>
+    <MailNews></MailNews>
+  </div>
 </template>
 
 <script>
-
-import ProductsSection from '@/components/productsSection.vue';
-import  LandingSection from '../components/landing.vue'
+import ProductsSection from "@/components/productsSection.vue";
+import LandingSection from "../components/landing.vue";
+import MailNews from "../components/mailNews.vue";
 
 export default {
   name: "HomePage",
@@ -17,8 +18,9 @@ export default {
   },
   components: {
     LandingSection,
-    ProductsSection
-  }
+    ProductsSection,
+    MailNews,
+  },
 };
 </script>
 
