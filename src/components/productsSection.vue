@@ -53,10 +53,7 @@ export default {
   data() {
     return {
       activeIndex: 0, // Index of the currently active button
-      buttons: [
-        { label: "المنتجات" },
-        { label: "الباقات" },
-      ],
+      buttons: [{ label: "المنتجات" }, { label: "الباقات" }],
     };
   },
   methods: {
@@ -88,12 +85,9 @@ export default {
     }
 
     &.active {
-     background-color: #492D7E;
+      background-color: #492d7e;
       color: #fff; /* Active text color */
-     
     }
   }
-
-  
 }
 </style>

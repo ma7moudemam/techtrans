@@ -2,9 +2,9 @@
   <div class="landing">
     <div class="container">
       <div class="d-flex flex-column justify-content-center align-items-center ">
-        <div class="w-75 text-center  f-w-bold fs-56">منتجات مبتكرة لمستقبل افضل متطور أكثر استدامة</div>
+        <div class="col-12 col-lg-8 text-center  f-w-bold fs-56">منتجات مبتكرة لمستقبل افضل متطور أكثر استدامة</div>
 
-        <div class="w-75 text-center fs-16 f-w-regular mt-32">
+        <div class="col-12 col-lg-8 text-center fs-16 f-w-regular mt-32">
           هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي
           القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات مثبتة منذ
           زمن طويل وهي أن المحتوى المقروء مثبتة منذ زمن
@@ -31,6 +31,7 @@ export default {
   margin-left: 17px;
   margin-right: 17px;
   padding: 100px;
+  padding-bottom: 225px;
 }
 
 

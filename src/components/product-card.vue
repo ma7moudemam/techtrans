@@ -8,8 +8,12 @@
         <div class="fs-18 f-w-bold text-black">مكسب</div>
       </div>
       <div class="d-flex align-items-center gap-6">
-        <div><img src="@/assets/images/icons/love.svg" alt="" class="cursor-p"/></div>
-        <div><img src="@/assets/images/icons/share.svg" alt="" class="cursor-p"/></div>
+        <div @click="toggleLove" class="cursor-p love-icon">
+          <img :src="isLoved ? lovedImage : defaultImage" alt="Love Icon" />
+        </div>
+        <div>
+          <img src="@/assets/images/icons/share.svg" alt="" class="cursor-p" />
+        </div>
       </div>
     </div>
     <!-- description -->
@@ -55,6 +59,18 @@ export default {
     msg: String,
     profitLabel: String,
     productDescription: String,
+  },
+  data() {
+    return {
+      isLoved: false, // Tracks the state of the love button
+      defaultImage: require("@/assets/images/icons/love.svg"), // Default image path
+      lovedImage: require("@/assets/images/icons/colredLove.svg"), // Image for active state
+    };
+  },
+  methods: {
+    toggleLove() {
+      this.isLoved = !this.isLoved; // Toggle the love button state
+    },
   },
 };
 </script>
@@ -104,8 +120,6 @@ export default {
   color: #fca320;
 }
 
-
-
 .clientNumber {
   background-color: rgba(16, 115, 163, 0.1);
   border: 1px solid rgba(16, 115, 163, 0.1);
@@ -121,15 +135,21 @@ export default {
   background-color: #ededed;
 }
 
-.clientType{
-  background-color: #F1F1F1;
+.clientType {
+  background-color: #f1f1f1;
   border-radius: 50px;
   // min-height: 30px;
   padding: 6px 10px;
   color: #333537;
-
-  
 }
 
+.love-icon {
+  img {
+    transition: all 0.3s ease;
+  }
 
+  &:hover img {
+    transform: scale(1.1); /* Slight scaling effect on hover */
+  }
+}
 </style>

@@ -36,7 +36,7 @@ export default {
 }
 
 .products {
-  margin-top: -80px; /* Adjust as needed for overlap */
+  margin-top: -176px; /* Adjust as needed for overlap */
   z-index: 2; /* Ensure this section is above the landing */
   background-color: transparent;
 }

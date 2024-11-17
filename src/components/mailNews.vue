@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div
-      class="mailContainer d-flex flex-column flex-md-row justify-content-between align-items-center"
+      class="mailContainer d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"
     >
       <div class="d-flex flex-column gap-2 text-white">
         <div class="fs-24 f-w-medium">النشرة البريدية</div>
