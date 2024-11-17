@@ -32,6 +32,7 @@ export default {
   margin-right: 17px;
   padding: 100px;
   padding-bottom: 225px;
+  margin-top: 60px
 }
 
 

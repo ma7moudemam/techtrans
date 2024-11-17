@@ -1,11 +1,11 @@
 <template>
-  <div class="product-card d-flex flex-column">
+  <div class="product-card d-flex flex-column cursor-p"  @click="goToProductDetails">
     <div class="d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center gap-20">
         <div>
-          <img src="@/assets/images/products/maksab.svg" alt="" />
+          <img :src="product.image" alt="" class="productImg"/>
         </div>
-        <div class="fs-18 f-w-bold text-black">مكسب</div>
+        <div class="fs-18 f-w-bold text-black">{{product.name}}</div>
       </div>
       <div class="d-flex align-items-center gap-6">
         <div @click="toggleLove" class="cursor-p love-icon">
@@ -17,9 +17,8 @@
       </div>
     </div>
     <!-- description -->
-    <div class="fs-14 f-w-regular">
-      نظام إلكتروني يساعد على إدارة الفعاليات إلكترونياً والقدوة على إقامتها
-      إفتراضياً.
+    <div class="fs-14 f-w-regular mt-12 text-333537">
+      {{ product.description }}
     </div>
     <!-- offer -->
     <div class="offer d-flex align-items-center gap-1 text-321D5D fs-12">
@@ -59,6 +58,10 @@ export default {
     msg: String,
     profitLabel: String,
     productDescription: String,
+    product: {
+      type: Object,
+      required: true, // Ensure the product prop is always passed
+    },
   },
   data() {
     return {
@@ -70,6 +73,14 @@ export default {
   methods: {
     toggleLove() {
       this.isLoved = !this.isLoved; // Toggle the love button state
+    },
+
+    goToProductDetails() {
+      this.$router.push({
+        name: "ProductDetails",
+        params: { id: this.product.id },
+        state: { product: this.product }, // Pass product data via state
+      });
     },
   },
 };
@@ -151,5 +162,10 @@ export default {
   &:hover img {
     transform: scale(1.1); /* Slight scaling effect on hover */
   }
+}
+
+.productImg{
+  width: 69px;
+  height: 60px;
 }
 </style>

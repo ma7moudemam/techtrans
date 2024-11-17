@@ -16,23 +16,8 @@
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div>
-          <ProductCard></ProductCard>
-        </div>
-        <div>
-          <ProductCard></ProductCard>
-        </div>
-        <div>
-          <ProductCard></ProductCard>
-        </div>
-        <div>
-          <ProductCard></ProductCard>
-        </div>
-        <div>
-          <ProductCard></ProductCard>
-        </div>
-        <div>
-          <ProductCard></ProductCard>
+        <div v-for="product in products" :key="product.id">
+          <ProductCard :product="product"></ProductCard>
         </div>
       </div>
     </div>
@@ -41,6 +26,7 @@
 
 <script>
 import ProductCard from "@/components/shared/product-card.vue";
+import products from "@/assets/data/products";
 
 export default {
   name: "ProductsSection",
@@ -52,6 +38,7 @@ export default {
   },
   data() {
     return {
+      products,
       activeIndex: 0, // Index of the currently active button
       buttons: [{ label: "المنتجات" }, { label: "الباقات" }],
     };

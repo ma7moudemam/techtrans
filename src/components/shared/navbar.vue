@@ -89,14 +89,15 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  width: 90%;
   background-color: #fff;
   border-radius: 40px;
   height: 80px;
-  margin-left: 40px;
-  margin-right: 40px;
   position: absolute;
   top: 18px;
   z-index: 5;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 .nav-link{
