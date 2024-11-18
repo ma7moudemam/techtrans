@@ -1,12 +1,15 @@
 <template>
-  <div class="loginPage d-flex flex-column justify-content-center align-items-center ">
+  <div class="container">
+    <div
+    class="loginPage d-flex flex-column justify-content-center align-items-center "
+  >
     <div>
       <img src="@/assets/images/main/logo.svg" alt="" />
     </div>
 
-    <div class="login-form-container ">
+    <div class="login-form-container col-6">
       <!-- Title -->
-      <div class="login-title">{{$t('login')}}</div>
+      <div class="login-title">{{ $t("login") }}</div>
 
       <!-- Description -->
       <div class="login-description">سيتم ارسال رمز التحقق للبريد المدخل</div>
@@ -87,6 +90,8 @@
       </div>
     </div>
   </div>
+  </div>
+ 
 </template>
 
 <script>
@@ -121,7 +126,7 @@ export default {
   font-weight: bold;
   margin-bottom: 15px;
   text-align: center;
-  color: #2B3759;
+  color: #2b3759;
 }
 
 .login-description {

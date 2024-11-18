@@ -1,15 +1,8 @@
 <template>
-  <div class="d-flex flex-column justify-content-center align-items-center">
-  
-    <main class="">
-      <router-view />
-      <!-- This is critical for rendering child components -->
-    </main>
-  </div>
+  <router-view />
 </template>
 
 <script>
-
 export default {
   name: "AuthLayout",
   components: {},
