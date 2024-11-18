@@ -1,0 +1,12 @@
+{
+    "login": "Login",
+    "send_verification": "A verification code will be sent to your email",
+    "account_type": "Select Account Type",
+    "individual": "Individual",
+    "non_profit": "Non-Profit Sector",
+    "private_sector": "Private Sector",
+    "sponsor": "Sponsor",
+    "mobile_number": "Mobile Number",
+    "password": "Password",
+    "login_button": "Login"
+  }
