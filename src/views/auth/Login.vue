@@ -68,13 +68,13 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="form-group">
+        <div class="">
           <button class="submit-button" @click="handleLogin">
             {{ $t("next") }}
           </button>
         </div>
       </div>
-      <div class="d-flex align-items-center justify-content-center gap-1  mb-5">
+      <div class="d-flex align-items-center justify-content-center gap-1 mb-5">
         <div class="text-777E90 fs-18 f-w-regular">
           {{ $t("donotHaveAccount") }}
         </div>
@@ -144,7 +144,7 @@ export default {
 .login-form-container {
   margin: 50px auto;
   margin-bottom: 26px !important;
-  padding: 30px;
+  padding: 20px 32px;
   border-radius: 20px;
   background-color: #fff;
 }
@@ -185,7 +185,7 @@ export default {
   border: 1px solid #c7c0da;
   border-radius: 20px;
   height: 49px;
-  width: 150px;
+  min-width: 150px;
   color: #2b3759;
 }
 
@@ -252,7 +252,7 @@ input:focus {
     border: 1px solid #c7c0da;
     border-radius: 20px;
     height: 49px;
-    width: 150px;
+    min-width: 130px;
     color: #2b3759;
     transition: all 0.3s ease;
 

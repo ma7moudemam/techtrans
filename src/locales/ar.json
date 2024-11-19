@@ -9,6 +9,13 @@
     "phoneNumber":"رقم الجوال",
     "login_description":"سيتم ارسال رمز التحقق للبريد المدخل",
     "donotHaveAccount":"ليس لديك حساب ?",
-    "createNewAccount":"انشاء حساب الآن"
+    "createNewAccount":"انشاء حساب الآن",
+    "navbar":{
+      "home":"الرئيسية",
+      "products":"المنتجات",
+      "contactUs":"تواصل معنا ",
+      "aboutUS":"عن التحول التقنى"
+
+    }
    
   }

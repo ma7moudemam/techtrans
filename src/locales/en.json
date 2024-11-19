@@ -9,5 +9,12 @@
     "phoneNumber":"Phone Number",
     "login_description":"The verification code will be sent to the email entered.",
     "donotHaveAccount":"you do not have account?",
-    "createNewAccount":"Create account now"
+    "createNewAccount":"Create account now",
+    "navbar":{
+      "home":"Home",
+      "products":"Products",
+      "contactUs":"Contact US",
+      "aboutUS":"About US"
+
+    }
   }

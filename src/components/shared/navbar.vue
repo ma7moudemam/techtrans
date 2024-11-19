@@ -2,78 +2,55 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <div class="d-flex align-items-center gap-75">
-        <a class="navbar-brand" href="#"
-          ><img src="@/assets/images/main/logo.svg" alt=""
-        /></a>
+        <router-link class="navbar-brand" to="/">
+          <img src="@/assets/images/main/logo.svg" alt="Logo" />
+        </router-link>
         <ul
           class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll d-none d-lg-flex"
           style="--bs-scroll-height: 100px"
         >
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">الرئيسية</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">عن التحول التقني</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">المنتجات</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">تواصل معنا</a>
-          </li>
-          
-        </ul>
-
-        <!-- <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-      </div>
-
-   
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <!-- <ul
-          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll d-lg-none"
-          style="--bs-scroll-height: 100px"
-        >
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+            <router-link
+              class="nav-link"
+              :class="{ active: isActive('/') }"
+              to="/"
             >
-              Link
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+              {{ $t("navbar.home") }}
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Link</a>
+            <router-link
+              class="nav-link"
+              :class="{ active: isActive('/about') }"
+              to="/about"
+            >
+              {{ $t("navbar.aboutUS") }}
+            </router-link>
           </li>
-        </ul> -->
+          <li class="nav-item">
+            <router-link
+              class="nav-link"
+              :class="{ active: isActive('/products') }"
+              to="/products"
+            >
+              {{ $t("navbar.products") }}
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link"
+              :class="{ active: isActive('/contact') }"
+              to="/contact"
+            >
+              {{ $t("navbar.contactUs") }}
+            </router-link>
+          </li>
+        </ul>
       </div>
 
-      <button class="btn main-button">تسجيل الدخول</button>
+      <router-link to="/auth/login" class="btn main-button"
+        >تسجيل الدخول</router-link
+      >
     </div>
   </nav>
 </template>
@@ -81,8 +58,10 @@
 <script>
 export default {
   name: "NavBar",
-  props: {
-    msg: String,
+  methods: {
+    isActive(route) {
+      return this.$route.path === route;
+    },
   },
 };
 </script>
@@ -100,8 +79,14 @@ export default {
   margin-right: 80px;
 }
 
-.nav-link{
-    color:#2B3759;
+.nav-link {
+  color: #2b3759;
+  transition: color 0.3s;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #492d7e;
 }
 
 .gap-75 {
