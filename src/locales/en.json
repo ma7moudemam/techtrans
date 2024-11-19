@@ -1,12 +1,13 @@
 {
     "login": "Login",
-    "send_verification": "A verification code will be sent to your email",
-    "account_type": "Select Account Type",
-    "individual": "Individual",
-    "non_profit": "Non-Profit Sector",
-    "private_sector": "Private Sector",
-    "sponsor": "Sponsor",
-    "mobile_number": "Mobile Number",
-    "password": "Password",
-    "login_button": "Login"
+    "individual":"Individual",
+    "non_profit":"Non Profit",
+    "private_sector":"Private Sector",
+    "sponsor":"Sponsor",
+    "next":"next",
+    "password":"password",
+    "phoneNumber":"Phone Number",
+    "login_description":"The verification code will be sent to the email entered.",
+    "donotHaveAccount":"you do not have account?",
+    "createNewAccount":"Create account now"
   }

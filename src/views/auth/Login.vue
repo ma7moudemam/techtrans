@@ -1,106 +1,133 @@
 <template>
   <div class="container">
     <div
-    class="loginPage d-flex flex-column justify-content-center align-items-center "
-  >
-    <div>
-      <img src="@/assets/images/main/logo.svg" alt="" />
-    </div>
-
-    <div class="login-form-container col-6">
-      <!-- Title -->
-      <div class="login-title">{{ $t("login") }}</div>
-
-      <!-- Description -->
-      <div class="login-description">سيتم ارسال رمز التحقق للبريد المدخل</div>
-
-      <!-- Account Type Selection -->
-      <div class="account-type">
-        <div class="account-type-title">اختر نوع الحساب</div>
-        <div class="account-options">
-          <label>
-            <input
-              type="radio"
-              name="accountType"
-              value="فرد"
-              v-model="accountType"
-            />
-            فــــــــــرد
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="accountType"
-              value="قطاع غير ربحي"
-              v-model="accountType"
-            />
-            قطاع غير ربحي
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="accountType"
-              value="قطاع خاص"
-              v-model="accountType"
-            />
-            قطاع خاص
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="accountType"
-              value="راعي"
-              v-model="accountType"
-            />
-            راعي
-          </label>
-        </div>
+      class="loginPage d-flex flex-column justify-content-center align-items-center"
+    >
+      <div>
+        <img src="@/assets/images/main/logo.svg" alt="" />
       </div>
 
-      <!-- Mobile Number Input -->
-      <div class="form-group">
-        <label for="mobile-number">رقم الجوال</label>
-        <div class="input-group">
-          <span class="input-prefix">+966</span>
+      <div class="login-form-container col-12 col-md-6">
+        <!-- Title -->
+        <div class="login-title">{{ $t("login") }}</div>
+
+        <!-- Description -->
+        <div class="login-description">{{ $t("login_description") }}</div>
+
+        <!-- Account Type Selection -->
+        <div class="account-type">
+          <div class="account-type-title">اختر نوع الحساب</div>
+          <div
+            class="account-options f-w-regular d-flex align-items-center justify-content-center gap-7"
+          >
+            <label
+              v-for="type in accountTypes"
+              :key="type.value"
+              :class="[
+                'account-option',
+                { selected: accountType === type.value },
+              ]"
+              @click="selectAccountType(type.value)"
+            >
+              {{ type.label }}
+            </label>
+          </div>
+        </div>
+
+        <!-- Mobile Number Input -->
+        <div class="form-group">
+          <label for="mobile-number" class="account-type-title">{{
+            $t("phoneNumber")
+          }}</label>
+          <div class="numberInput">
+            <input
+              id="mobile-number"
+              type="tel"
+              v-model="mobileNumber"
+              placeholder="05XXXXXXX"
+              required
+              class="form-control"
+            />
+            <span class="input-prefix">+966</span>
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="password" class="account-type-title">{{
+            $t("password")
+          }}</label>
           <input
-            id="mobile-number"
-            type="tel"
-            v-model="mobileNumber"
-            placeholder="ادخل رقم الجوال"
+            id="password"
+            type="password"
+            v-model="password"
+            :placeholder="$t('password')"
             required
+            class="form-control"
           />
         </div>
-      </div>
 
-      <!-- Password Input -->
-      <div class="form-group">
-        <label for="password">كلمة المرور</label>
-        <input
-          id="password"
-          type="password"
-          v-model="password"
-          placeholder="ادخل كلمة المرور"
-          required
-        />
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button class="submit-button" @click="handleLogin">
+            {{ $t("next") }}
+          </button>
+        </div>
       </div>
-
-      <!-- Submit Button -->
-      <div class="form-group">
-        <button class="submit-button" @click="handleLogin">تسجيل الدخول</button>
+      <div class="d-flex align-items-center justify-content-center gap-1  mb-5">
+        <div class="text-777E90 fs-18 f-w-regular">
+          {{ $t("donotHaveAccount") }}
+        </div>
+        <div class="text-CC1586 fs-18 f-w-regular cursor-p">
+          {{ $t("createNewAccount") }}
+        </div>
       </div>
     </div>
   </div>
-  </div>
- 
 </template>
 
 <script>
 export default {
   name: "LoginPage",
-  props: {
-    msg: String,
+  data() {
+    return {
+      accountType: null, // Selected account type
+      mobileNumber: "",
+      password: "",
+      accountTypes: [
+        {
+          value: "individual",
+          label: this.$t("individual"),
+        },
+        {
+          value: "non_profit",
+          label: this.$t("non_profit"),
+        },
+        {
+          value: "private_sector",
+          label: this.$t("private_sector"),
+        },
+        { value: "sponsor", label: this.$t("sponsor") },
+      ],
+    };
   },
-  components: {},
+  methods: {
+    selectAccountType(type) {
+      this.accountType = type;
+    },
+    handleLogin() {
+      if (!this.accountType) {
+        alert("Please select an account type.");
+        return;
+      }
+      // Handle login logic
+      console.log("Logging in with:", {
+        accountType: this.accountType,
+        mobileNumber: this.mobileNumber,
+        password: this.password,
+      });
+    },
+  },
 };
 </script>
 
@@ -116,7 +143,8 @@ export default {
 
 .login-form-container {
   margin: 50px auto;
-  padding: 20px;
+  margin-bottom: 26px !important;
+  padding: 30px;
   border-radius: 20px;
   background-color: #fff;
 }
@@ -142,15 +170,27 @@ export default {
 
 .account-type-title {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 300;
   margin-bottom: 10px;
+  color: #2b3759;
 }
 
 .account-options label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px !important;
+  font-weight: 300;
   cursor: pointer;
+  border: 1px solid #c7c0da;
+  border-radius: 20px;
+  height: 49px;
+  width: 150px;
+  color: #2b3759;
+}
+
+.account-options input {
+  display: none;
 }
 
 .form-group {
@@ -164,19 +204,6 @@ label {
   font-weight: bold;
 }
 
-.input-group {
-  display: flex;
-  align-items: center;
-}
-
-.input-prefix {
-  padding: 5px 10px;
-  background-color: #f3f3f3;
-  border: 1px solid #ddd;
-  border-radius: 4px 0 0 4px;
-  color: #555;
-}
-
 input {
   flex: 1;
   padding: 10px;
@@ -187,7 +214,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #492d7e;
 }
 
 .submit-button {
@@ -196,13 +223,68 @@ input:focus {
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background-color: #007bff;
+  background-color: #492d7e;
   border: none;
-  border-radius: 4px;
+  border-radius: 40px;
   cursor: pointer;
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  background-color: #492d7e;
+}
+
+.gap-7 {
+  gap: 7px;
+}
+
+.account-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .account-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px !important;
+    font-weight: 300;
+    cursor: pointer;
+    border: 1px solid #c7c0da;
+    border-radius: 20px;
+    height: 49px;
+    width: 150px;
+    color: #2b3759;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+
+    &.selected {
+      background-color: #492d7e;
+      color: white;
+      border-color: #492d7e;
+      font-weight: bold;
+    }
+  }
+}
+
+.numberInput {
+  position: relative;
+
+  .form-control {
+    padding-inline-start: 80px !important;
+  }
+
+  .input-prefix {
+    position: absolute;
+    left: 30px;
+    color: #2b3759;
+    font-size: 18px;
+    font-weight: 400;
+    top: 50%;
+    transform: translateY(-50%);
+    direction: ltr;
+  }
 }
 </style>

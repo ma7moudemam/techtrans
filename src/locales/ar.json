@@ -1,12 +1,14 @@
 {
     "login": "تسجيل الدخول",
-    "send_verification": "سيتم ارسال رمز التحقق للبريد المدخل",
-    "account_type": "اختر نوع الحساب",
-    "individual": "فــــــــــرد",
+    "individual":"فرد",
     "non_profit": "قطاع غير ربحي",
     "private_sector": "قطاع خاص",
-    "sponsor": "راعي",
-    "mobile_number": "رقم الجوال",
-    "password": "كلمة المرور",
-    "login_button": "تسجيل الدخول"
+    "sponsor":"راعي",
+    "next":"التالى",
+    "password":"كلمة المرور",
+    "phoneNumber":"رقم الجوال",
+    "login_description":"سيتم ارسال رمز التحقق للبريد المدخل",
+    "donotHaveAccount":"ليس لديك حساب ?",
+    "createNewAccount":"انشاء حساب الآن"
+   
   }

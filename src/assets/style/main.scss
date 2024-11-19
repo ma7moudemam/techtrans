@@ -52,6 +52,10 @@ body {
   font-size: 16px;
 }
 
+.fs-18{
+  font-size: 18px;
+}
+
 .fs-24{
   font-size: 24px;
 }
@@ -138,4 +142,27 @@ body {
     border: 0;
     color: #fff;
   }
+}
+
+
+.form-control{
+  border-radius: 45px !important;
+  border: 1px solid #DAE1EE !important;
+  padding-inline-start: 28px !important;
+}
+
+::placeholder {
+  color: #8E97AD !important; 
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: #8E97AD !important;
+}
+
+.text-777E90{
+  color: #777E90;
+}
+
+.text-CC1586{
+  color: #CC1586;
 }
